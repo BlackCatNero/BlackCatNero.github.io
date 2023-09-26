@@ -185,8 +185,10 @@ function calcResults()
 	for (var i = 0; i < NUM_SCALES; i++)
 	{
 		//results_weight[i] = results_tally[i] / 15.0;
-		results_overall += (1.0 / 6.0) * results_rating[i];
+		results_overall += results_rating[i];
 	}
+	
+	results_overall /= 6;
 }
 
 // Output the table of results
@@ -206,9 +208,9 @@ function getResultsHTML()
 		//result += results_tally[i];
 		//result += ",";
 
-		result += "";
-		result += results_weight[i];
-		result += ",";
+		//result += "";
+		//result += results_weight[i];
+		//result += ",";
 	}
 
 	result += "\n";
