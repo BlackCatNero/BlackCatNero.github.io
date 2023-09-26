@@ -82,8 +82,8 @@ function clicked1() {
 	//document.getElementById("div1").style.display = "none";
 	//document.getElementById("div2").style.display = "";
 	//setPairLabels();
-	document.getElementById('div2').style.display = 'none';
-	document.getElementById('div3').style.display = '';
+	document.getElementById('div1').style.display = 'none';
+	document.getElementById('div2').style.display = '';
 	calcResults();
     console.log(getResultsHTML())
     const scoredata = getResultsHTML();
