@@ -79,9 +79,32 @@ function clicked1() {
 	// let element = document.getElementById("div2");
 	// element.insertAdjacentHTML("afterbegin", str);
 
-	document.getElementById("div1").style.display = "none";
-	document.getElementById("div2").style.display = "";
-	setPairLabels();
+	//document.getElementById("div1").style.display = "none";
+	//document.getElementById("div2").style.display = "";
+	//setPairLabels();
+	document.getElementById('div2').style.display = 'none';
+	document.getElementById('div3').style.display = '';
+	calcResults();
+    console.log(getResultsHTML())
+    const scoredata = getResultsHTML();
+	document.getElementById('score').value=scoredata;
+    //const scorearea = document.getElementById('score');
+    const button = document.getElementById('copybutton');
+
+    button.addEventListener('click', () => {
+    if (!navigator.clipboard) {
+        alert("このブラウザは対応していません");
+        return;
+    }
+
+    navigator.clipboard.writeText(scoredata).then(
+		() => {
+			alert('文章をコピーしました。');
+		},
+        () => {
+			alert('コピーに失敗しました。');
+        });
+    });
 }
 
 function setPairLabels(){
@@ -161,8 +184,8 @@ function calcResults()
 
 	for (var i = 0; i < NUM_SCALES; i++)
 	{
-		results_weight[i] = results_tally[i] / 15.0;
-		results_overall += results_weight[i] * results_rating[i];
+		//results_weight[i] = results_tally[i] / 15.0;
+		results_overall += (1.0 / 6.0) * results_rating[i];
 	}
 }
 
@@ -180,8 +203,8 @@ function getResultsHTML()
 		result += results_rating[i];
 		result += ",";
 
-		result += results_tally[i];
-		result += ",";
+		//result += results_tally[i];
+		//result += ",";
 
 		result += "";
 		result += results_weight[i];
