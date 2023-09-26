@@ -207,7 +207,6 @@ function getResultsHTML()
 
 		//result += results_tally[i];
 		//result += ",";
-
 		//result += "";
 		//result += results_weight[i];
 		//result += ",";
